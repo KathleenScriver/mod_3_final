@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 20181030170403) do
     t.bigint "player_2_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "player_1_score"
-    t.integer "player_2_score"
+    t.integer "player_1_score", default: 0
+    t.integer "player_2_score", default: 0
     t.index ["player_1_id"], name: "index_games_on_player_1_id"
     t.index ["player_2_id"], name: "index_games_on_player_2_id"
   end
