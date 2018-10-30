@@ -12,12 +12,10 @@ describe WordSearchFacade do
 
   context 'instance methods' do
     context '#examples' do
-      it 'should return sentence examples of word in hash with region' do
-        text_1 = "Meditation is one way to express mindfulness in a dedicated, concentrated manner."
-        text_2 = "At such times, mindfulness of the practice of patience and the application of certain techniques will help us to continue generating this attitude."
-
-        expected_hash = { "British" => text_1, "Canadian" => text_2 }
-        expect(subject.examples).to eq(expected_hash)
+      it 'should return examples objects of word in array' do
+        expect(subject.examples.first).to be_a(Example)
+        expect(subject.examples.first.region).to eq("Canadian")
+        expect(subject.examples.first.text).to eq("Meditation is one way to express mindfulness in a dedicated, concentrated manner.")
       end
     end
   end

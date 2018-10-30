@@ -15,7 +15,7 @@ feature "As a guest user" do
     # And I should see a list of sentences with examples of how to use the word
     expect(page).to have_css(".example-sentence")
     # And I should see only sentences where the region for usage is "Brittish" or "Canadian"
-    expect(page).to have_content("Region: Brittish")
+    expect(page).to have_content("Region: British")
     expect(page).to have_content("Region: Canadian")
     # And I should not see sentences for any other regions (or blank regions)
   end
