@@ -5,3 +5,12 @@
 <%= text_field_tag :word %>
 
 <%= submit_tag "Submit" %>
+
+<% if @word_search_results %>
+ <p>Examples for using '<%= @word_search_results.word %>'</p>
+ <ul>
+   <% @word_search_results.examples.each do |example| %>
+    <li class='.example-sentence'><%= example.sentence %></li>
+    <li class='.region'>Region: <%= example.region %></li>
+   <% end %>
+ </ul>

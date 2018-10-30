@@ -1,5 +1,5 @@
 class WordsController < ApplicationController
   def index
-
-  end 
+    redirect_to '/'
+  end
 end
