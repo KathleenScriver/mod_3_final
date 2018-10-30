@@ -8,5 +8,13 @@ describe Play do
         expect(play.score).to eq(6)
       end
     end
+
+    context '#increment_score' do
+      it 'totals player points' do
+        play = create(:play, word: "assess")
+        game = play.game
+        expect(game.player_1_score).to eq(6)
+      end
+    end
   end
 end

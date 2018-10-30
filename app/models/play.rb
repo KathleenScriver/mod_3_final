@@ -3,6 +3,7 @@ class Play < ApplicationRecord
   belongs_to :game
 
   before_save :score_word
+  after_save :increment_score
 
   def letter_scores
     {
@@ -20,5 +21,9 @@ class Play < ApplicationRecord
         sum += letter_scores[letter.upcase]
       end
       self.score = total
+    end
+
+    def increment_score
+      Game.find(self.game_id).cumulate_scores(self.user_id, self.score)
     end
 end
