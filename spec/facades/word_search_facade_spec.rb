@@ -5,4 +5,8 @@ describe WordSearchFacade do
   it 'exists' do
     expect(subject).to be_a(WordSearchFacade)
   end
+
+  it 'is created with word attribute' do
+    expect(subject.word).to eq('mindfulness')
+  end
 end
