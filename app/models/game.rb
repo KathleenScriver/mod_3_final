@@ -4,6 +4,10 @@ class Game < ApplicationRecord
 
   has_many :plays
 
+  # def take_turn(word)
+  #   Play.new(word)
+  # end
+
   def cumulate_scores(player, score)
     if player_1_id == player
       self.player_1_score += score
