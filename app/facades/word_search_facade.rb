@@ -17,9 +17,8 @@ class WordSearchFacade
     regional_info = raw_info.select do |info_hash|
       info_hash[:regions].first == "Canadian" || info_hash[:regions].first == "British"
     end
-    t = regional_info.map do |regional_hash|
+    regional_info.map do |regional_hash|
       Example.new(regional_hash[:regions], regional_hash[:text])
     end
-    require "pry"; binding.pry
   end
 end
