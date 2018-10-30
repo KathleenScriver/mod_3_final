@@ -13,9 +13,11 @@ describe WordSearchFacade do
   context 'instance methods' do
     context '#examples' do
       it 'should return examples objects of word in array' do
-        expect(subject.examples.first).to be_a(Example)
-        expect(subject.examples.first.region).to eq("Canadian")
-        expect(subject.examples.first.text).to eq("Meditation is one way to express mindfulness in a dedicated, concentrated manner.")
+        VCR.use_cassette("examples") do
+          expect(subject.examples.first).to be_a(Example)
+          expect(subject.examples.first.region).to eq("Canadian")
+          expect(subject.examples.first.text).to eq("Meditation is one way to express mindfulness in a dedicated, concentrated manner.")
+        end
       end
     end
   end
