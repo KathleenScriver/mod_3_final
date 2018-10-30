@@ -15,6 +15,9 @@ describe Play do
         user_1 = create(:user)
         user_2 = create(:user)
         game = create(:game, player_1: user_1, player_2: user_2)
+        game.player_1_score = 0
+        game.player_2_score = 0
+        game.save
         play = create(:play, word: "assess", game: game, user: user_1)
         expect(Game.first.player_1_score).to eq(6)
       end

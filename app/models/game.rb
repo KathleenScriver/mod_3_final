@@ -5,12 +5,12 @@ class Game < ApplicationRecord
   has_many :plays
 
   def cumulate_scores(player, score)
-    require "pry"; binding.pry
-    if player_1_id == player
-      player_1_score += score
-    elsif player_2_id == player
-      player_2_score += score
+    if self.player_1_id == player
+      self.player_1_score += score
+    elsif self.player_2_id == player
+      self.player_2_score += score
     end
+    self.save
   end
 
   def total_scores

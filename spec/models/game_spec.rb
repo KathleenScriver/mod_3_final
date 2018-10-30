@@ -9,7 +9,7 @@ describe Game do
         game = create(:game)
         play_1 = create(:play, word: "assess", game: game, user: user_1)
 
-        game.cumulate_score
+        game.cumulate_scores
       end
     end
   end
