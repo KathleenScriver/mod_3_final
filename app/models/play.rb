@@ -24,6 +24,8 @@ class Play < ApplicationRecord
     end
 
     def increment_score
-      Game.find(self.game_id).cumulate_scores(self.user_id, self.score)
+      game = Game.find(self.game_id)
+      game.cumulate_scores(self.user_id, self.score)
+      game.save
     end
 end
